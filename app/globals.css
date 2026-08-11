@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --prometa-brown: #4a3e3d;
+  --prometa-white: #f5f5f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--prometa-brown);
+  color: var(--prometa-white);
+}
