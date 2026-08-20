@@ -75,7 +75,7 @@ export default function AboutPage() {
       {/* SECTION 1 — Hero */}
       <section
         className="relative flex min-h-[85vh] items-center bg-charcoal-950 bg-cover bg-center px-6 md:px-16 lg:px-24"
-        style={{ backgroundImage: "url('/prometa-bg2.png')" }}
+        style={{ backgroundImage: "url('/bg/prometa-bg2.png')" }}
       >
         <div className="absolute inset-0 bg-linear-to-t from-charcoal-950 via-charcoal-950/70 to-charcoal-950/30" />
 

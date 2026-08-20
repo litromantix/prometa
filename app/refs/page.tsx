@@ -31,7 +31,7 @@ export default function ReferencesPage() {
       {/* SECTION 1 — Hero */}
       <section
         className="relative flex min-h-[70vh] items-center bg-charcoal-950 bg-cover bg-center px-6 md:px-16 lg:px-24"
-        style={{ backgroundImage: "url('/bg/prometa-bg1.png')" }}
+        style={{ backgroundImage: "url('/bg/prometa-bg4.png')" }}
       >
         <div className="absolute inset-0 bg-linear-to-t from-charcoal-950 via-charcoal-950/80 to-charcoal-950/40" />
 
