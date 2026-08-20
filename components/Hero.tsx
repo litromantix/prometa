@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
     return (
         <section className="flex min-h-screen items-center px-6 md:px-16 lg:px-24">
@@ -15,12 +17,15 @@ export default function Hero() {
             architectural projects.
           </p>
 
-          <button className="group mt-10 inline-flex items-center gap-3 border border-white/25 px-7 py-4 text-sm uppercase tracking-widest text-white transition-all duration-300 ease-premium hover:border-accent-500 hover:bg-accent-500 hover:text-charcoal-950">
+          <Link
+            href="/projects"
+            className="group mt-10 inline-flex items-center gap-3 border border-white/25 px-7 py-4 text-sm uppercase tracking-widest text-white transition-all duration-300 ease-premium hover:border-accent-500 hover:bg-accent-500 hover:text-charcoal-950"
+          >
             Explore Projects
             <span className="transition-transform duration-300 ease-premium group-hover:translate-x-1">
               →
             </span>
-          </button>
+          </Link>
         </div>
       </section>
     )
