@@ -29,6 +29,9 @@ export default function ProjectsGallery({
     });
   }, [projects, activeCategory, activeTag]);
 
+  const withPhotos = filtered.filter((project) => project.image);
+  const withoutPhotos = filtered.filter((project) => !project.image);
+
   return (
     <div>
       <div className="flex flex-wrap gap-3">
@@ -95,27 +98,19 @@ export default function ProjectsGallery({
       </p>
 
       <div className="mt-8 grid gap-8 md:grid-cols-2">
-        {filtered.map((project) => (
+        {withPhotos.map((project) => (
           <article
             key={project.id}
             className="border border-white/10 bg-bronze-900/20"
           >
             <div className="relative aspect-video w-full overflow-hidden bg-bronze-900">
-              {project.image ? (
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center p-6 text-center text-xs uppercase tracking-widest text-cream-400/60">
-                  Add project photo:
-                  <br />
-                  {project.name}
-                </div>
-              )}
+              <Image
+                src={project.image as string}
+                alt={project.name}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
               <span className="absolute left-4 top-4 bg-charcoal-950/70 px-3 py-1.5 text-xs uppercase tracking-widest text-accent-400">
                 {categories.find((c) => c.key === project.category)?.label}
               </span>
@@ -126,9 +121,11 @@ export default function ProjectsGallery({
               <p className="mt-1 text-sm text-cream-400">
                 {project.location}
               </p>
-              <p className="mt-1 text-sm text-cream-400">
-                {project.contractorLabel}: {project.contractor}
-              </p>
+              {project.contractor && (
+                <p className="mt-1 text-sm text-cream-400">
+                  {project.contractorLabel}: {project.contractor}
+                </p>
+              )}
 
               <p className="mt-5 leading-relaxed text-cream-200">
                 {project.overview}
@@ -147,25 +144,46 @@ export default function ProjectsGallery({
                 </div>
               )}
 
-              <details className="mt-6 group">
-                <summary className="cursor-pointer text-xs uppercase tracking-widest text-accent-400 transition-colors duration-300 ease-premium hover:text-accent-500">
-                  Technical Scope &amp; Materials
-                </summary>
-                <ul className="mt-4 space-y-3">
-                  {project.scope.map((item) => (
-                    <li
-                      key={item}
-                      className="border-l border-accent-500/40 pl-4 text-sm leading-relaxed text-cream-200"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </details>
+              {project.scope.length > 0 && (
+                <details className="mt-6 group">
+                  <summary className="cursor-pointer text-xs uppercase tracking-widest text-accent-400 transition-colors duration-300 ease-premium hover:text-accent-500">
+                    Technical Scope &amp; Materials
+                  </summary>
+                  <ul className="mt-4 space-y-3">
+                    {project.scope.map((item) => (
+                      <li
+                        key={item}
+                        className="border-l border-accent-500/40 pl-4 text-sm leading-relaxed text-cream-200"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
             </div>
           </article>
         ))}
       </div>
+
+      {withoutPhotos.length > 0 && (
+        <div className="mt-20 border-t border-white/10 pt-12">
+          <h3 className="text-sm uppercase tracking-[0.3em] text-cream-400">
+            Other Projects:
+          </h3>
+          <ul className="mt-6 grid gap-x-8 gap-y-3 md:grid-cols-2">
+            {withoutPhotos.map((project) => (
+              <li
+                key={project.id}
+                className="border-l border-accent-500/40 pl-4 text-sm leading-relaxed text-cream-200"
+              >
+                {project.name}
+                <span className="text-cream-400"> — {project.location}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

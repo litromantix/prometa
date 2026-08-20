@@ -10,7 +10,7 @@ export const categories: { key: Category; label: string }[] = [
   { key: "aviation", label: "Aviation & Infrastructure" },
   { key: "retail", label: "Retail & Commercial Malls" },
   { key: "hospitality", label: "Hospitality & High-Rise Residential" },
-  { key: "corporate", label: "Corporate Headquarters" },
+  { key: "corporate", label: "Corporate & Public Facilities" },
 ];
 
 export type Tag =
@@ -32,8 +32,8 @@ export type Project = {
   id: string;
   name: string;
   location: string;
-  contractorLabel: "General Contractor" | "Investor";
-  contractor: string;
+  contractorLabel?: "General Contractor" | "Investor";
+  contractor?: string;
   category: Category;
   overview: string;
   scope: string[];
@@ -111,7 +111,7 @@ export const projects: Project[] = [
       "High-tolerance stainless steel floor skirtings running throughout the main passenger terminal corridors.",
     ],
     tags: [],
-    image: null,
+    image: "/projects/airport-izmir.jpg",
   },
   {
     id: "ashgabat-airport",
@@ -128,7 +128,7 @@ export const projects: Project[] = [
       "High-end stainless steel handrails and protective skirting on all grand staircases and passenger ramps.",
     ],
     tags: ["point-fix-spider-glass"],
-    image: null,
+    image: "/projects/airport-ashgabat.jpg",
   },
   {
     id: "kuntsevo-plaza",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
       "Precision-aligned aluminium composite facade claddings integrated directly with structural balustrades and stainless steel floor skirtings.",
     ],
     tags: ["u-channel-glass", "led-lighting", "stainless-mesh"],
-    image: null,
+    image: "/projects/kuntsevo-plaza.jpg",
   },
   {
     id: "kashirskaya-trade-center",
@@ -164,7 +164,7 @@ export const projects: Project[] = [
       "High-traffic stair glass railings equipped with heavy-duty stainless steel skirting and brackets.",
     ],
     tags: ["point-fix-spider-glass"],
-    image: null,
+    image: "/projects/kashirskaya-trade-center.jpg",
   },
   {
     id: "trump-shopping-mall",
@@ -181,7 +181,7 @@ export const projects: Project[] = [
       "Gallery-edge glass railings clamping directly into integrated steel U-channels, finished with premium wooden handrails.",
     ],
     tags: ["point-fix-spider-glass"],
-    image: null,
+    image: "/projects/trump-mall-istanbul.jpg",
   },
   {
     id: "jw-marriott-absheron",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
       "Seamless integration of custom aluminium facade cladding profiles acting as a continuous horizontal transition band between the building's floor plates and the glass balustrades.",
     ],
     tags: [],
-    image: null,
+    image: "/projects/jw-marriott-baku.jpg",
   },
   {
     id: "el-aurassi-hotel",
@@ -213,7 +213,7 @@ export const projects: Project[] = [
       "Custom-fabricated balcony privacy separators engineered with robust stainless steel glass brackets, premium milky glass panels, and corrosion-resistant stainless steel structural connectors.",
     ],
     tags: [],
-    image: null,
+    image: "/projects/el-aurassi-hotel.jpg",
   },
   {
     id: "eti-gida-hq",
@@ -228,6 +228,184 @@ export const projects: Project[] = [
       "Elegant mezzanine glass railings supported by custom-engineered steel substructures and integrated aluminium U-channel base assemblies.",
       "Sleek stainless steel handrails and protective skirting lining all interior multi-floor walkways.",
     ],
+    tags: [],
+    image: "/projects/eti-gida-office.jpg",
+  },
+  {
+    id: "oncological-care-moscow",
+    name: "Oncological Care of the Moscow Scientific Research",
+    location: "Moscow, Russian Federation",
+    category: "healthcare",
+    overview:
+      "Features a sophisticated glass canopy application supported by a heavy-duty stainless steel structural construction at the main building entrance.",
+    scope: [],
+    tags: [],
+    image: "/projects/oncological-care-moscow.jpg",
+  },
+  {
+    id: "sheremetyevo-svo3",
+    name: "Sheremetyevo Airport Terminal — SVO3",
+    location: "Moscow, Russian Federation",
+    category: "aviation",
+    overview:
+      "An airport terminal featuring custom-designed painted glass railings, stainless steel decorative crossbars, and structural column claddings split between painted finishes and polished stainless steel.",
+    scope: [],
+    tags: [],
+    image: "/projects/sheremetyevo-airport.jpg",
+  },
+  {
+    id: "kazan-airport-terminal",
+    name: "Kazan Airport Terminal Building",
+    location: "Kazan, Tatarstan",
+    contractorLabel: "General Contractor",
+    contractor: "Monotek İnşaat A.Ş.",
+    category: "aviation",
+    overview:
+      "Infrastructure project involving specialized architectural metal and glass works managed for general contractor Monotek.",
+    scope: [],
+    tags: [],
+    image: null,
+  },
+  {
+    id: "aqua-florya-mall",
+    name: "Aqua Florya Shopping Mall",
+    location: "İstanbul, Turkey",
+    category: "retail",
+    overview:
+      "Highlights side-mounted glass railings with custom aluminium base profiles, premium wooden handrails, and atrium bridge railings utilizing laser-cut, painted steel posts.",
+    scope: [],
+    tags: [],
+    image: "/projects/aqua-florya-mall.jpg",
+  },
+  {
+    id: "nautilus-mall",
+    name: "Nautilus Shopping Mall",
+    location: "İstanbul, Turkey",
+    category: "retail",
+    overview:
+      "Utilizes clean glass balustrades with side-mounted aluminium base profiles and glass separator enclosures wrapped around panoramic elevator shafts using stainless steel posts and glass brackets.",
+    scope: [],
+    tags: [],
+    image: "/projects/nautilus-mall.jpg",
+  },
+  {
+    id: "ambar-mall-samara",
+    name: "Ambar Shopping Mall",
+    location: "Samara, Russian Federation",
+    category: "retail",
+    overview:
+      "Highlights store-front glass facades supported by painted steel profile posts and custom stainless steel spider and routel connections, complete with heavy-use glass doors and stainless steel handles.",
+    scope: [],
+    tags: ["point-fix-spider-glass"],
+    image: "/projects/ambar-mall.jpg",
+  },
+  {
+    id: "festival-mall-moscow",
+    name: "Festival Shopping Mall",
+    location: "Moscow, Russian Federation",
+    category: "retail",
+    overview:
+      "Features a striking multi-floor spiral staircase application utilizing a custom steel stair construction, laser-cut steel posts, and stainless steel handrails and crossbars.",
+    scope: [],
+    tags: [],
+    image: "/projects/festival-mall.jpg",
+  },
+  {
+    id: "malldova-chisinau",
+    name: "MallDova Shopping Mall",
+    location: "Chișinău, Moldova",
+    category: "retail",
+    overview:
+      "Retail development featuring circular glass atrium railings with stainless steel posts, and structural columns finished in high-grade stainless steel cladding.",
+    scope: [],
+    tags: [],
+    image: "/projects/malldova-mall.jpg",
+  },
+  {
+    id: "ramstore-11-15",
+    name: "Ramstore 11 & 15 Shopping Malls",
+    location: "Moscow, Russian Federation",
+    category: "retail",
+    overview:
+      "Commercial developments utilizing premium internal and external structural metalwork and glass installations.",
+    scope: [],
+    tags: [],
+    image: null,
+  },
+  {
+    id: "holiday-inn-baku",
+    name: "Holiday Inn Hotel",
+    location: "Baku, Azerbaijan",
+    category: "hospitality",
+    overview:
+      "Focuses on interior stair and gallery glass railings over steel construction, stainless steel column skirtings, and frameless glass separators in the spa area.",
+    scope: [],
+    tags: [],
+    image: "/projects/inn-hotel.jpg",
+  },
+  {
+    id: "radisson-blu-tripoli",
+    name: "Radisson BLU Hotel",
+    location: "Tripoli, Libya",
+    category: "hospitality",
+    overview:
+      "Comprises internal stair and gallery glass railings using integrated steel U-channels, coupled with architectural stainless steel column claddings and decorative facade elements.",
+    scope: [],
+    tags: ["u-channel-glass"],
+    image: "/projects/radisson-hotel.jpg",
+  },
+  {
+    id: "gateway-office-baku",
+    name: "Gateway Office Building — White City",
+    location: "Baku, Azerbaijan",
+    category: "corporate",
+    overview:
+      "Features fluid, sweeping architectural curves with glass balconies and railings utilizing custom aluminium U-channel clamping systems, alongside multi-floor glass pedestrian bridge dividers using painted safety glass.",
+    scope: [],
+    tags: ["u-channel-glass"],
+    image: "/projects/gateway-baku.jpg",
+  },
+  {
+    id: "it-tekno-park-kazan",
+    name: "IT Tekno Park",
+    location: "Kazan, Tatarstan",
+    category: "corporate",
+    overview:
+      "Highlights a striking interior staircase application built with a custom steel frame, structural glass steps, point-fix glass brackets, and integrated decorative LED lighting.",
+    scope: [],
+    tags: ["point-fix-spider-glass", "led-lighting"],
+    image: "/projects/it-tecno-park.jpg",
+  },
+  {
+    id: "kadikoy-convention-center",
+    name: "Kadıköy Convention Center",
+    location: "İstanbul, Turkey",
+    category: "corporate",
+    overview:
+      "Focuses on a structural glass facade cladding system supported by painted steel posts, high-tensile stainless steel tensioners, and spider and routel assemblies.",
+    scope: [],
+    tags: ["point-fix-spider-glass"],
+    image: "/projects/kadikoy-center.jpg",
+  },
+  {
+    id: "khanty-mansiysk-theatre",
+    name: "Theatre — Ice Hockey and Bowling Centre",
+    location: "Khanty-Mansiysk, Russian Federation",
+    category: "corporate",
+    overview:
+      "High-profile public sports and leisure complex featuring specialized metal fabrication and installation scopes.",
+    scope: [],
+    tags: [],
+    image: null,
+  },
+  {
+    id: "eurovision-crystal-hall",
+    name: "Eurovision SCC Project — Crystal Hall",
+    location: "Baku, Azerbaijan",
+    category: "corporate",
+    overview:
+      "Elite public infrastructure achievement utilizing custom architectural metalwork and structural support framing.",
+    scope: [],
     tags: [],
     image: null,
   },
